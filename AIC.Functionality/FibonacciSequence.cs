@@ -12,7 +12,7 @@ namespace AIC.Functionality
         //assume: starts at 0,1; Return n number of ints for the sequence
         public static List<int> fibonacci(int n)
         {
-            var rawSequence = new List<int> { 0, 1 };
+            var rawSequence = new List<int> { 0, 1};
 
             if (n < 2)
             {

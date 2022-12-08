@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
 
 namespace AIC.Sorting.Testing
 {
@@ -11,7 +12,7 @@ namespace AIC.Sorting.Testing
             creatures.SortDragonsByName();
 
             Assert.Equal("Aaronarra", creatures.Dragons[0].Name);
-            Assert.Equal("Umbraxakar", creatures.Dragons[^0].Name);
+            Assert.Equal("Umbraxakar", creatures.Dragons.LastOrDefault().Name);
         }
     }
 }

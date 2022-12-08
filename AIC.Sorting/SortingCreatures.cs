@@ -16,7 +16,7 @@ namespace AIC.Sorting
 
         public void SortDragonsByName()
         {
-            throw new NotImplementedException();
+            Dragons = Dragons.OrderBy(i => i.Name).ToList();
         }
     }
 }
