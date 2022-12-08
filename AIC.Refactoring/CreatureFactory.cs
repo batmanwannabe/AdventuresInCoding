@@ -1,4 +1,5 @@
-﻿using AIC.Data.Models;
+﻿using AIC.Data.Enums;
+using AIC.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,16 @@ namespace AIC.Refactoring
     {
         public static object? AdoptACreature(string creatureName)
         {
-            if (creatureName == null)
+            switch (creatureName)
             {
-                return default;
-            }
-            else if (creatureName == "dragon")
-            {
-                return new Dragon();
-            }
-            else if (creatureName == "unicorn")
-            {
-                return new Unicorn();
-            }
-            else
-            {
-                return new Creature();
+                case null:
+                    return default;
+                case nameof(CreatureEnum.dragon):
+                    return new Dragon();
+                case nameof(CreatureEnum.unicorn):
+                    return new Unicorn();
+                default:
+                    return new Creature();
             }
         }
     }
